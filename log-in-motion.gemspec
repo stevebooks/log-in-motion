@@ -3,7 +3,7 @@ require File.expand_path('../lib/log_in_motion/version', __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "log-in-motion"
-  s.version     = MotionLogger::VERSION
+  s.version     = LogInMotion::VERSION
   s.authors     = ["Steve Books"]
   s.homepage    = "https://github.com/stevebooks/log-in-motion"
   s.summary     = "Simple logger for RubyMotion"
