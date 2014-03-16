@@ -40,13 +40,13 @@ module LogInMotion
 
   def error(message)
     message = "!!!!!!#{Time.now}<=>#{self.class.name}<=>:#{message}\n"
-    logMessage(message) if Constants::LOGLEVEL >= 1
+    logMessage(message) if LOG_IN_MOTION_LEVEL >= 1
   end
 
   private
   def logMessage(message)
     fileManager = NSFileManager.defaultManager
-    filePath = App.documents_path + "/" + Constants::LOG_FILENAME
+    filePath = App.documents_path + "/" + LOG_IN_MOTION_FILENAME
 
     if !fileManager.fileExistsAtPath(filePath)
       data = "".dataUsingEncoding(NSUTF8StringEncoding)
