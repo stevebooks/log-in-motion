@@ -8,7 +8,7 @@ module LogInMotion
     def debug(message)
       message = "#{Time.now}<=>#{self.class.name}<=>:#{message}\n"
       fileManager = NSFileManager.defaultManager
-      filePath = App.documents_path + "/" + Constants::LOG_FILENAME
+      filePath = App.documents_path + "/" + LOG_IN_MOTION_FILENAME
 
       if !fileManager.fileExistsAtPath(filePath)
         data = "".dataUsingEncoding(NSUTF8StringEncoding)
@@ -35,7 +35,7 @@ module LogInMotion
   #instance method
   def debug(message)
     message = "#{Time.now}<=>#{self.class.name}<=>:#{message}\n"
-    logMessage(message) if Constants::LOG_LEVEL >= 2
+    logMessage(message) if LOG_IN_MOTION_LEVEL >= 2
   end
 
   def error(message)
