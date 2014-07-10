@@ -18,7 +18,7 @@ module LogInMotion
       #check how big the log file is
       attrs = fileManager.attributesOfItemAtPath(filePath, error: nil)
       fileSize = attrs.fileSize
-      if fileSize > 100000
+      if fileSize > LOG_IN_MOTION_MAX_FILE_SIZE
         data = "".dataUsingEncoding(NSUTF8StringEncoding)
         data.writeToFile(filePath, atomically:true)
       end
@@ -56,7 +56,7 @@ module LogInMotion
     #check how big the log file is
     attrs = fileManager.attributesOfItemAtPath(filePath, error: nil)
     fileSize = attrs.fileSize
-    if fileSize > 100000
+    if fileSize > LOG_IN_MOTION_MAX_FILE_SIZE
       data = "".dataUsingEncoding(NSUTF8StringEncoding)
       data.writeToFile(filePath, atomically:true)
     end
